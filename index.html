@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>まるきち鯖 公式サイト</title>
   <style>
+    /* 全体背景をパステルイエロー（黄色）に設定☆ */
     body { 
-      font-family: sans-serif; 
-      background-color: #36393f; 
-      color: #ffffff; 
+      font-family: 'Hiragino Maru Gothic ProN', 'Meiryo UI', sans-serif; 
+      background-color: #fffab3; 
+      color: #4a3e3d; 
       padding: 40px 20px;
       max-width: 700px;
       margin: 0 auto;
@@ -18,61 +19,120 @@
       text-align: center;
       margin-bottom: 30px;
     }
-    h1 { color: #5865f2; margin-bottom: 5px; }
-    .welcome-msg { font-size: 1.1rem; color: #00ebba; font-weight: bold; }
+    h1 { 
+      color: #ff3377; 
+      margin-bottom: 5px; 
+      text-shadow: 2px 2px 0px #ffffff;
+      font-size: 2rem;
+    }
+    .welcome-msg { 
+      font-size: 1.1rem; 
+      color: #ff3377; 
+      font-weight: bold; 
+    }
     
+    /* 文字の入る箱（カード）は濃いめイエロー＆丸角☆ */
     .card {
-      background-color: #2f3136;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
+      background-color: #ffffff;
+      border: 3px solid #facc15;
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 12px rgba(250, 204, 21, 0.3);
+    }
+    .rules-card {
+      background-color: #fffae6;
+      border: 3px dashed #ff6699;
     }
     h2 { 
-      color: #5865f2; 
-      font-size: 1.2rem;
-      border-bottom: 1px solid #4f545c;
+      color: #ff3377; 
+      font-size: 1.25rem;
+      border-bottom: 2px dotted #facc15;
       padding-bottom: 8px;
       margin-top: 0;
+    }
+    .rule-item {
+      background-color: #fffde6;
+      border: 2px solid #eab308;
+      color: #4a3e3d;
+      padding: 10px 16px;
+      border-radius: 18px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .admin-list { 
+      color: #ff0055; 
+      font-weight: bold; 
     }
     ul { padding-left: 20px; }
     li { margin-bottom: 8px; }
     code {
-      background-color: #202225;
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #f6c445;
+      background-color: #fff9a6;
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: #d97706;
+      border: 1px solid #facc15;
+      font-weight: bold;
     }
     
-    .action-area {
-      text-align: center;
+    /* 同意エリア☆ */
+    .agree-box {
       margin-top: 30px;
-      margin-bottom: 30px;
+      padding: 25px;
+      background-color: #ffffff;
+      border: 3px solid #facc15;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(250, 204, 21, 0.3);
     }
-    .btn { 
-      display: inline-block; 
-      padding: 14px 28px; 
-      background-color: #5865f2; 
-      color: #fff; 
-      text-decoration: none; 
-      border-radius: 5px; 
-      font-weight: bold; 
+    .agree-label {
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #ff0055;
+    }
+    .btn-join {
+      display: inline-block;
+      padding: 14px 30px;
+      background-color: #ff4d88;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
       font-size: 1.1rem;
+      pointer-events: none;
+      opacity: 0.4;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 0px #cc0044;
     }
-    .btn:hover { background-color: #4752c4; }
+    /* チェックを入れるとボタンを有効化 */
+    #agree-check:checked ~ .btn-join {
+      pointer-events: auto;
+      opacity: 1;
+    }
+    .btn-join:hover { 
+      background-color: #ff0055;
+      transform: translateY(2px);
+      box-shadow: 0 2px 0px #cc0044;
+    }
+
     .footer-msg {
       text-align: center;
       font-size: 1.3rem;
       font-weight: bold;
-      color: #00ebba;
+      color: #ff0055;
       margin-top: 40px;
+      text-shadow: 1px 1px 0px #ffffff;
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <h1>まるきち鯖のはじめてガイド！</h1>
-    <p class="welcome-msg">新規さん、いらっしゃいませ☆<br>このサーバーの案内をしていくよ☆</p>
+    <h1>⭐ 🎀 まるきち鯖のはじめてガイド！ 🎀 ⭐</h1>
+    <p class="welcome-msg">☆ 新規さん、いらっしゃいませ☆<br>このサーバーの案内をしていくよ☆ ☆</p>
   </div>
 
   <div class="card">
@@ -80,14 +140,14 @@
     <p>このサーバーは、<strong>誰でも大歓迎！自由に楽しく過ごせる、あったかいサーバー</strong>だにょ☆（ため口とかもおっけー！）</p>
     <p>だけど、<strong>相手が嫌がることや冷笑、荒らし行為</strong>はしないこと！<br>
     もし嫌なことや困ったことがあったら、<strong>ひとりで抱え込まず</strong>に管理人の <strong>ちいはや・こなた・たこ</strong> に相談してね☆</p>
-    <p>みんなが<strong>いつでも安心できる居場所</strong>に、みんなでしてこうね！</p>
+    <p>みんなが<strong>いつでも安心できる居場所</strong>に、みんなでしてこうね☆</p>
   </div>
 
   <div class="card">
-    <h2>② ちいはや語録</h2>
+    <h2>② ちいはや語録☆</h2>
     <ul>
-      <li><strong>「ぴーなつ、りんご、りんごあめ」</strong> → いいね☆、最高</li>
-      <li><strong>「ぱいなぽーみかん」</strong> → うーん</li>
+      <li><strong>「ぴーなつ、りんご、りんごあめ」</strong> → いいね☆、最高☆</li>
+      <li><strong>「ぱいなぽーみかん」</strong> → うーん☆</li>
     </ul>
     <p>でも実際は、<strong>意味とかあんまり考えてないかも☆</strong><br>
     他にも色々あるからわかんなかったら気軽に聞いてね☆</p>
@@ -95,17 +155,31 @@
 
   <div class="card">
     <h2>③ お金とゲーム☆</h2>
-    <p>このサーバーにはお金とゲーム機能があって<code>/カジノヘルプ</code> でゲーム一覧が見られるよ！</p>
-    <p>お金は100メッセージにつき500円配布されるよ！<br>
-    カジノでお金を増やして大富豪を目指そう！</p>
+    <p>このサーバーにはお金とゲーム機能があって <code>/カジノヘルプ</code> でゲーム一覧が見られるよ☆！</p>
+    <p>お金は100メッセージにつき500円配布されるよ☆！<br>
+    カジノでお金を増やして大富豪を目指そう☆！</p>
   </div>
 
-  <div class="action-area">
-    <a href="rules.html" class="btn">ルールを確認してサーバーに参加する</a>
+  <!-- ルールセクション -->
+  <div class="card rules-card">
+    <h2>📋 サーバーのルール☆</h2>
+    <div class="rule-item">1. 仲良くする（冷笑禁止）☆</div>
+    <div class="rule-item">2. 嫌なことをしない☆</div>
+    <div class="rule-item">3. 迷惑行為をしない☆</div>
+    <div class="rule-item">4. 嫌な事があったら管理人に言う☆</div>
+    <p style="padding-left: 5px; color: #554444;">管理者: <span class="admin-list">ちいはや、こなた、たこ</span></p>
+  </div>
+
+  <!-- 同意・参加エリア -->
+  <div class="agree-box">
+    <input type="checkbox" id="agree-check">
+    <label for="agree-check" class="agree-label">☆ 上記のルールに同意します ☆</label>
+    <br>
+    <a href="https://discord.gg/marukichi" class="btn-join" target="_blank">⭐ 同意してDiscordサーバーに参加する ⭐</a>
   </div>
 
   <div class="footer-msg">
-    改めて、まるきち鯖☆へようこそ☆
+    ☆ 改めて、まるきち鯖☆へようこそ☆ ☆
   </div>
 
 </body>
